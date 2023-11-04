@@ -1,0 +1,174 @@
+<div class="ai-mat-container">
+  <ng-content select="ai-mat-column-table"></ng-content>
+  <div class="ai-mat-loading-shade" *ngIf="isRateLimitReached && !isLoadingResults">
+    <div class="ai-mat-rate-limit-reached">
+      <ng-container *ngIf="!contentError else msgContentError">
+        Existen problemas al cargar los datos.
+      </ng-container>
+      <ng-template #msgContentError>
+        <ng-content select="ai-mat-error-data-table"></ng-content>
+      </ng-template>
+    </div>
+  </div>
+  <div class="">
+
+    <div [formGroup]="dataStructure" class="ai-mat-table-container">
+
+      <table [ngClass]="{'vertical-line': verticalLine}" formArrayName="filtersState" mat-table
+             [dataSource]="dataSource" class="ai-mat-table" matSort multiTemplateDataRows>
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th [hidden]="!selectAvailable" mat-header-cell *matHeaderCellDef rowspan="2">
+            <mat-checkbox (click)="$event.preventDefault(); masterToggle()"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td [hidden]="!selectAvailable" mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selectRow(row) : null"
+                          [checked]="selection.isSelected(row.id)" [aria-label]="checkboxLabel(row.id)">
+            </mat-checkbox>
+          </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+
+        <!-- ********** -->
+        <!-- Generate Column Label -->
+        <ng-container *ngFor="let column of contentColumns; let i = index"
+                      matColumnDef="{{column.matColumnDef.name}}">
+          <ng-container *ngIf="column.filter else normalColumn">
+            <th [hidden]="column.hidden" mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="!column.sort"
+                [arrowPosition]="column.arrowPosition"
+                [ngStyle]="{'min-width': column.minWidth, 'width': column.width}">
+              <div [formGroupName]="i" [ngClass]="{'table-header-data': column.filter}">
+                <div>{{column.title}}</div>
+              </div>
+            </th>
+          </ng-container>
+          <ng-template #normalColumn>
+            <th [hidden]="column.hidden" mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="!column.sort"
+                [arrowPosition]="column.arrowPosition" [ngStyle]="{'min-width': column.minWidth, 'width': column.width}"
+                rowspan="2">{{column.title}}</th>
+          </ng-template>
+
+          <td [hidden]="column.hidden" mat-footer-cell *matFooterCellDef></td>
+
+        </ng-container>
+
+        <!-- Option Column -->
+        <ng-container *ngIf="contentOption" matColumnDef="option">
+          <th mat-header-cell *matHeaderCellDef rowspan="2">{{contentOption.title}}</th>
+          <td mat-footer-cell *matFooterCellDef>
+          </td>
+        </ng-container>
+
+        <!-- Generate Column Filter -->
+        <ng-container *ngFor="let column of contentColumns; let i = index"
+                      matColumnDef="{{column.matColumnDef.name}}-filter">
+          <th [hidden]="column.hidden" mat-header-cell *matHeaderCellDef>
+            <div [formGroupName]="i" [ngClass]="{'table-header-data': column.filter}">
+              <ng-template [ngIf]="column.filter && optionColumn(i) !== '3'">
+                <label (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" class="mat-table-input">
+                  <mat-form-field class="search-field" appearance="fill">
+                    <input matInput formControlName="filterData" placeholder="">
+                    <button (click)="$event.stopPropagation()" matPrefix mat-icon-button class="icon-filter"
+                            aria-label="Search icon" [matMenuTriggerFor]="menu" [matMenuTriggerData]="{optionType: i}">
+                      <mat-icon>search</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <ng-template [ngIf]="optionColumn(i) === '1'">
+                    <mat-form-field *ngIf="filtersState.value[i]['optionFilterData']==='between'"
+                                    class="search-field" appearance="fill">
+                      <input matInput formControlName="filterDataBetween" placeholder="">
+                    </mat-form-field>
+                  </ng-template>
+                </label>
+              </ng-template>
+              <ng-template [ngIf]="column.filter && optionColumn(i) === '3'">
+                <label (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" class="mat-table-input">
+                  <mat-form-field class="search-field" appearance="fill">
+                    <ng-template [ngIf]="filtersState.value[i]['optionFilterData']!=='7'">
+                      <input readonly (click)="picker.open()" matInput formControlName="filterData" placeholder=""
+                             [matDatepicker]="picker">
+                      <mat-datepicker #picker></mat-datepicker>
+                    </ng-template>
+                    <ng-template [ngIf]="filtersState.value[i]['optionFilterData']==='7'">
+                      <mat-date-range-input class="between" (click)="pickerRange.open()" [rangePicker]="pickerRange">
+                        <input matStartDate formControlName="filterData" placeholder="Fecha Inicial">
+                        <input matEndDate formControlName="filterDataBetween" placeholder="Fecha Final">
+                      </mat-date-range-input>
+                      <mat-date-range-picker #pickerRange></mat-date-range-picker>
+                    </ng-template>
+                    <button (click)="$event.stopPropagation()" matPrefix mat-icon-button class="icon-filter"
+                            aria-label="Search icon" [matMenuTriggerFor]="menu" [matMenuTriggerData]="{optionType: i}">
+                      <mat-icon>search</mat-icon>
+                    </button>
+                  </mat-form-field>
+
+                </label>
+              </ng-template>
+            </div>
+          </th>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true">
+        </tr>
+        <tr mat-header-row *matHeaderRowDef="displayedFilterColumns">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)"
+            [ngClass]="{'row-selected': selection.isSelected(row.id) }">
+        </tr>
+
+        <tr [ngStyle]="{'display': isInputRowVisibility ? '' : 'none' }" mat-footer-row
+            *matFooterRowDef="displayedColumns"></tr>
+
+        <!-- Row shown when there IS no matching data. -->
+        <ng-container *ngIf="!(isRateLimitReached)">
+          <tr class="mat-row" *matNoDataRow>
+            <ng-container>
+              <td class="mat-cell align-text-center" [colSpan]="displayedColumns.length">Sin datos</td>
+            </ng-container>
+          </tr>
+        </ng-container>
+
+        <mat-menu #menu="matMenu">
+          <ng-template matMenuContent let-optionType="optionType">
+            <section [formGroupName]="optionType" class="mat-menu-filter">
+              <mat-radio-group formControlName="optionFilterData">
+                <button mat-button (click)="resetFilter(optionType)" class="mat-menu-item text-left">
+                  Reestablecer
+                </button>
+                <ng-template [ngIf]="optionColumn(optionType)==='1' || optionColumn(optionType)==='3'">
+                  <mat-radio-button class="mat-menu-item" value="EQUALS">Igual</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="DISTINCT">Diferente</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="LESS_THAN">Menor que</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="MORE_THAN">Mayor que</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="LESS_THAN_OR_EQUAL">Menor o igual que</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="MORE_THAN_OR_EQUAL">Mayor o igual que</mat-radio-button>
+                </ng-template>
+                <ng-template [ngIf]="optionColumn(optionType)==='2'">
+                  <mat-radio-button class="mat-menu-item" value="EQUALS">Igual</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="DISTINCT">Diferente</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="CONTAINS">Contiene</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="NOT_CONTAINS">No contiene</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="STARTS_WITH">Empieza con</mat-radio-button>
+                  <mat-radio-button class="mat-menu-item" value="ENDS_WITH">Termina en</mat-radio-button>
+                </ng-template>
+              </mat-radio-group>
+            </section>
+          </ng-template>
+        </mat-menu>
+
+      </table>
+
+    </div>
+
+    <mat-progress-bar mode="indeterminate" [color]="colorProgressBar" *ngIf="isLoadingResults"></mat-progress-bar>
+    <mat-paginator [length]="resultsLength" [showFirstLastButtons]="showFirstLastButtons" [color]="colorPaginator"
+                   [hidePageSize]="hidePageSize" [disabled]="disabledPaginator" [pageSizeOptions]="pageSizeOptions"
+                   class="mat-paginator-sticky"></mat-paginator>
+  </div>
+</div>
+
+

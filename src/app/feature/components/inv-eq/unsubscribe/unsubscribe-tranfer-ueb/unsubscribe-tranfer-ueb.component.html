@@ -1,0 +1,202 @@
+
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+  Planilla traslado a ueb de la misma empresa
+</ai-title>
+
+<div mat-dialog-content>
+<form
+    class="container form-container"
+    [formGroup]="bajaForm"
+    fxLayout="column"
+>
+<table>
+  <tr>
+    <td colspan="3" style="text-align: right;">Modelo SC-1-01</td>
+  </tr>
+  <tr style="height: 50px;">
+    <th colspan="3" class="text-center">MOVIMIENTO DE ACTIVOS FIJOS</th>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">
+      NOMBRE DE LA ENTIDAD: 
+      {{invData[0].entity}}
+    </td>
+    <td class="text-left">Código:</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-left">Área:</td>
+  </tr>
+  <tr style="height: 50px;">
+    <td colspan="3" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Descripción:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-left">No. Inventario:</td>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label>Fecha de la operación:</mat-label>
+        <input matInput class="text-center" [matDatepicker]="pick1">
+        <mat-datepicker-toggle matSuffix  [for]="pick1"></mat-datepicker-toggle>
+        <mat-datepicker #pick1></mat-datepicker>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="1" rowspan="2" class="text-left">Documento:</td>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Valor:</mat-label>
+        <input matInput type="number"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Importe depreciación acumulada:</mat-label>
+        <input matInput type="number"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="1" rowspan="2" class="text-left">Receptor:</td>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Nombre:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Dirección:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Nombre apellido y firma del receptor:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label>Fecha recepción:</mat-label>
+        <input matInput class="text-center" [matDatepicker]="pick2">
+        <mat-datepicker-toggle matSuffix  [for]="pick2"></mat-datepicker-toggle>
+        <mat-datepicker #pick2></mat-datepicker>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="3" class="text-center">TIPO DE MOVIMIENTO</th>
+  </tr>
+  <tr>
+    <td class="text-left">Compras</td>
+    <td colspan="2" class="text-left">Ventas</td>
+  </tr>
+  <tr>
+    <td class="text-left">Traslado interno (Recibido)</td>
+    <td colspan="2" class="text-left">Ajuste inventario por baja</td>
+  </tr>
+  <tr>
+    <td class="text-left">Ajuste inventario por alta</td>
+    <td colspan="2" class="text-left">Pérdidas</td>
+  </tr>
+  <tr>
+    <td class="text-left">Traslado de ocioso a activo</td>
+    <td colspan="2" class="text-left">Traslado de activo a ocioso</td>
+  </tr>
+  <tr>
+    <td class="text-left">Enviado a reparar</td>
+    <td colspan="2" class="text-left">Alquiler</td>
+  </tr>
+  <tr>
+    <td class="text-left"></td>
+    <td colspan="2" class="text-left">Baja</td>
+  </tr>
+  <tr>
+    <td class="text-left"></td>
+    <td colspan="2" class="text-left">Préstamo</td>
+  </tr>
+  <tr style="height: 50px;">
+    <td colspan="3" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Fundamentación de la operación:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr style="height: 50px;">
+    <td colspan="3" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Técnico que certifica estado:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Elaborado por:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label>Fecha emisión:</mat-label>
+        <input matInput class="text-center" [matDatepicker]="pick3">
+        <mat-datepicker-toggle matSuffix  [for]="pick3"></mat-datepicker-toggle>
+        <mat-datepicker #pick3></mat-datepicker>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">Aprobado por:</td>
+    <td class="text-left">Fecha aprobación:</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Nombre y firma persona que ejecuta la anotación en el control de activo:</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">No. Consecutivo:</mat-label>
+        <input matInput type="number"/>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+    Cancelar
+  </button>
+  <button
+    (click)="accept()"
+    class="left-space btn-width"
+    mat-raised-button
+    type="submit"
+    color="primary"
+  >
+    Aceptar
+  </button>
+</div>

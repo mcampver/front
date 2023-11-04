@@ -1,0 +1,31 @@
+<ai-title mat-dialog-title cdkDrag cdkDragHandle cdkDragRootElement=".cdk-overlay-pane" class="title-dialog--drag">
+  {{ labelTitle }} tipo de maquinaria
+</ai-title>
+
+<div mat-dialog-content>
+  <form class="container form-container" [formGroup]="createForm" fxLayout="column">
+
+    <mat-form-field appearance="standard">
+      <mat-label class="required">Nombre:</mat-label>
+      <input matInput formControlName="name" type="text" appInputNoEmoji
+        [formControlDirective]="this.createForm.get('name')" appInputOnlyLettersWithSpace
+        [placeholder]="globalFormInputsMessage.INPUT_LAE" />
+      <mat-error *ngIf="this.createForm.controls['name'].hasError(formValidationErrorNameEnum.REQUIRED)">
+        {{globalFormInputsMessage.INPUT_REQUIERED}}
+      </mat-error>
+      <mat-error *ngIf="this.createForm.controls['name'].hasError(formValidationErrorNameEnum.FIELD_ALREADY_EXIST)">
+        {{globalFormInputsMessage.INPUT_FIELD_ALREADY_EXIST}}
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+    Cancelar
+  </button>
+  <button (click)="accept()" class="left-space btn-width" mat-raised-button type="submit" color="primary"
+    [disabled]="!createForm.valid">
+    Aceptar
+  </button>
+</div>

@@ -1,0 +1,111 @@
+<!-- @Autor:Gianni Martinez -->
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+  {{ labelTitle }} clasificador de equipos
+</ai-title>
+<div mat-dialog-content>
+  <form class="container form-container" [formGroup]="formPresenter">
+    <div>
+      <mat-form-field appearance="standard">
+        <mat-label class="required">Código:</mat-label>
+        <input matInput formControlName="code"type="text" readonly/>
+      </mat-form-field>
+      
+      <ai-auto-complete
+      (ngModelChange)="codeCountry()"
+      formControlName="country"
+      [datasource]="formPresenter.countryDataSource"
+      [showExpr]="formPresenter.showExprC"
+      [label]="'Paises:'"
+      [fields]="formPresenter.fieldsCountry"
+      [(ngModel)]="formPresenter.fieldValueC"
+      > 
+      </ai-auto-complete>
+      
+      <ai-auto-complete
+      (ngModelChange)="codeEquipmentType()"
+      formControlName="equipmentType"
+      [datasource]="formPresenter.equipmentTypeDataSource"
+      [showExpr]="formPresenter.showExprE"
+      [label]="'Tipo de Equipo:'"
+      [fields]="formPresenter.fieldsEquipmentType"
+      [(ngModel)]="formPresenter.fieldValueE"
+      >
+      </ai-auto-complete>
+
+      <ai-auto-complete
+      formControlName="machineryType"
+      [datasource]="formPresenter.machineryTypeDataSource"
+      [showExpr]="formPresenter.showExprMa"
+      [label]="'Tipo de Maquinaria:'"
+      [fields]="formPresenter.fieldsMachineryType"
+      [(ngModel)]="formPresenter.fieldValueMa"
+      >
+      </ai-auto-complete>
+
+      <ai-auto-complete
+      formControlName="brand"
+      [datasource]="formPresenter.brandDataSource"
+      [showExpr]="formPresenter.showExprB"
+      [label]="'Marcas:'"
+      [fields]="formPresenter.fieldsBrand"
+      [(ngModel)]="formPresenter.fieldValueB"
+      >
+      </ai-auto-complete>
+      
+      <ai-auto-complete
+      formControlName="model"
+      [datasource]="formPresenter.modelDataSource"
+      [showExpr]="formPresenter.showExprMo"
+      [label]="'Modelos:'"
+      [fields]="formPresenter.fieldsModel"
+      [(ngModel)]="formPresenter.fieldValueMo"
+      >
+      </ai-auto-complete>
+      
+    </div> 
+  <div style="padding-bottom: 3%; padding-top: 2%;">
+    <mat-checkbox formControlName="tuition" style="padding-right: 20%; padding-left: 10%"> Matrícula </mat-checkbox>
+
+    <mat-checkbox  formControlName="serial" style="padding-right: 20%; padding-left: 15%;" > No. Serie </mat-checkbox> 
+
+  </div>
+  <mat-label style="padding-left: 10%;">Explotación de equipos: </mat-label>
+<div style="padding-top: 2%;">
+  
+    <mat-checkbox formControlName="c32" style="padding-right: 10%; padding-left: 10%;" >
+      C32
+    </mat-checkbox>
+
+    <mat-checkbox formControlName="rutePaper" style="padding-right: 10%; padding-left: 5%">
+      Hoja de ruta
+    </mat-checkbox>
+
+    <mat-checkbox formControlName="simpleRutePaper" style="padding-right: 10%">
+      Hoja de ruta simple
+    </mat-checkbox>
+  </div>
+ </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+    Cancelar
+  </button>
+  <button
+    (click)="accept()"
+    class="left-space btn-width"
+    mat-raised-button
+    type="submit"
+    color="primary"
+    [disabled]="!formPresenter.valid"
+  >
+    Aceptar
+  </button>
+</div>
+
+

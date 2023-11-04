@@ -1,0 +1,33 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+}
+  
+.example-radio-button {
+    margin: 15px;
+}
+
+
+table {
+    width: 100%;
+    margin-top: 1rem;
+}
+td, th {
+    border: 1px solid black;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+}
+  
+.example-radio-button {
+    margin: 15px;
+}
+
+.example-margin {
+    margin: 0 0 0 15px;
+}

@@ -1,0 +1,115 @@
+<!-- @Autor:Gianni Martinez -->
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+  {{ labelTitle }} Clasificadores de equipos
+</ai-title>
+
+<div mat-dialog-content>
+  <form class="container form-container" [formGroup]="createForm">
+    <mat-form-field
+      appearance="standard"
+      style="padding-right: 20%; padding-left: 10%"
+    >
+      <mat-label class="required">Código:</mat-label>
+      <input
+        matInput
+        formControlName="id"
+        type="text"
+        readonly
+        [placeholder]="globalFormInputsMessage.INPUT_CODE_S"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label class="required">Países:</mat-label>
+      <mat-select>
+        <mat-option> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <form class="container form-container" [formGroup]="createForm">
+    <mat-form-field
+      appearance="standard"
+      style="padding-right: 20%; padding-left: 10%"
+    >
+      <mat-label class="required">Tipos de equipo:</mat-label>
+      <mat-select>
+        <mat-option> </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label class="required">Tipos de maquinarias:</mat-label>
+      <mat-select>
+        <mat-option> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <form class="container form-container" [formGroup]="createForm">
+    <mat-form-field
+      appearance="standard"
+      style="padding-right: 20%; padding-left: 10%"
+    >
+      <mat-label class="required">Marcas:</mat-label>
+      <mat-select>
+        <mat-option> </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label class="required">Modelos:</mat-label>
+      <mat-select>
+        <mat-option> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+    <form class="container form-container" [formGroup]="createForm" style="padding-bottom: 3%; padding-top: 2%;">
+      <mat-checkbox style="padding-right: 20%; padding-left: 10%"> Matrícula </mat-checkbox>
+
+      <mat-checkbox style="padding-right: 20%; padding-left: 15%;" > No. Serie </mat-checkbox> 
+
+  </form>
+
+  
+  <mat-label style="padding-left: 10%;">Explotación de equipos: </mat-label>
+  <form class="container form-container" [formGroup]="createForm" style="padding-top: 2%;">
+    
+      <mat-checkbox style="padding-right: 10%; padding-left: 10%;" >
+        C32
+      </mat-checkbox>
+
+      <mat-checkbox style="padding-right: 10%; padding-left: 5%">
+        Hoja de ruta
+      </mat-checkbox>
+
+      <mat-checkbox style="padding-right: 10%">
+        Hoja de ruta simple
+      </mat-checkbox>
+  </form>
+
+  
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+    Cancelar
+  </button>
+  <button
+    (click)="accept()"
+    class="left-space btn-width"
+    mat-raised-button
+    type="submit"
+    color="primary"
+    [disabled]="!createForm.valid"
+  >
+    Aceptar
+  </button>
+</div>

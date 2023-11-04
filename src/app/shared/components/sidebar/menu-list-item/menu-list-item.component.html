@@ -1,0 +1,50 @@
+<button class="ai-menu-button" (click)="onClick()"
+        [ngClass]="{'active': isActive}">
+  <div class="ai-menu-button__led-activity"></div>
+  <div class="ai-menu-button__spacer-level" [ngStyle]="{'padding-left': depth + 'rem'}"></div>
+  <div class="ai-menu-button__icon">
+    <ng-container *ngIf="isAicrosIcon; else materialIcons">
+      <mat-icon *ngIf="item.iconName"
+                class="routeIcon" [svgIcon]="item.iconName">
+      </mat-icon>
+    </ng-container>
+    <ng-template #materialIcons>
+      <mat-icon *ngIf="item.iconName" class="routeIcon">
+        {{item.iconName}}
+      </mat-icon>
+    </ng-template>
+  </div>
+  <div class="ai-menu-button__label">
+    {{item.displayName}}
+  </div>
+
+  <span class="ai-menu-button__indicator-rotate" fxFlex *ngIf="isFather">
+    <span class="ai-menu-button__indicator-rotate__spacer" fxFlex></span>
+    <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'"
+              class="ai-menu-button__indicator-rotate__icon icon-expand">
+      expand_more
+    </mat-icon>
+  </span>
+
+  <div *ngIf="isLeaf" #tooltip="matTooltip"
+       class="ai-menu-button__pin-icon"
+       [matTooltip]="msgIconPinTooltip"
+       matTooltipPosition="right"
+       (click)="pinIconClick($event)"
+       (mousedown)="pinIconClickTooltip(tooltip)"
+  >
+    <mat-icon  svgIcon="push_pin" [ngStyle]="{transform: 'rotate('+degIconPinTooltip+'deg)'}">
+    </mat-icon>
+  </div>
+
+</button>
+
+<ng-container *ngIf="isFather">
+  <div #panelExpanded class="panel-expanded" @panelExpandedTrigger
+       (@panelExpandedTrigger.start)="onAnimationStart(panelExpanded)"
+       (@panelExpandedTrigger.done)="onAnimationDone(panelExpanded)"
+       *ngIf="expanded">
+    <ai-menu-list-item *ngFor="let child of item.children" [item]="child" [depth]="depth+1">
+    </ai-menu-list-item>
+  </div>
+</ng-container>

@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary: map.get($color-config, primary);
+  $b: map.get($color-config, background);
+  $f: map.get($color-config, foreground);
+
+  .ai-menu-button {
+    color: mat.get-color-from-palette($b, menu-button) !important;
+
+    &:focus {
+      box-shadow: 0 0 0 1px mat.get-color-from-palette($b, menu-button-focus1),
+      0 0 0 3px mat.get-color-from-palette($b, menu-button-focus2);
+    }
+
+    &:hover {
+      background-color: mat.get-color-from-palette($b, menu-button-hover) !important;
+    }
+
+    &.active {
+      background-color: mat.get-color-from-palette($b, menu-button-active) !important;
+
+      .ai-menu-button__led-activity {
+        background-color: mat.get-color-from-palette($b, menu-button-led-activity);
+      }
+    }
+  }
+
+  .ai-menu-button__pin-icon {
+    &:hover {
+      background-color: mat.get-color-from-palette($b, menu-button__pin-icon-hover);
+    }
+
+    mat-icon {
+      color: mat.get-color-from-palette($b, menu-button__pin-icon-icon) !important;
+    }
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

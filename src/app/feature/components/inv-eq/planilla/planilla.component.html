@@ -1,0 +1,230 @@
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+  <div mat-dialog-actions align="end">
+    <button
+    (click)="accept()"
+    class="left-space btn-width"
+    mat-icon-button
+    type="submit"
+    color="primary"
+    [disabled]="!createForm.valid"
+  >
+  <mat-icon>print</mat-icon>
+    
+  </button>
+  <button mat-icon-button type="button" class="btn-width" (click)="cancel()">
+    <mat-icon>close</mat-icon>
+    
+  </button>
+</div>
+
+Planilla
+
+</ai-title>
+
+<div mat-dialog-content>
+<form
+    class="container form-container"
+    fxLayout="column"
+>
+<table>
+  <tr>
+    <th colspan="3" rowspan="1" style="text-align: center;">MINISTERIO DE LA CONSTRUCIÓN</th>
+    <th colspan="3" rowspan="1" style="text-align: center;">INVENTARIO DE EQUIPOS</th>
+    <th colspan="2" style="text-align: center;">FECHA</th>
+  </tr>
+  <tr>
+    <th colspan="3" rowspan="2" style="text-align: center;">DIRECCIÓN DE EQUIPOS</th>
+    <th colspan="3" rowspan="2" style="text-align: center;">DATOS PRIMARIOS</th>
+    <th colspan="2" style="text-align: center;">D | M | A</th>
+  </tr>
+  <tr>
+    <th colspan="2" style="text-align: left;">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required"></mat-label>
+        <input matInput type="date"/>
+      </mat-form-field>
+    </th>
+  </tr>
+  <tr>
+    <th colspan="8" style="text-align: center;">UBICACIÓN DEL EQUIPO</th>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align: left;">UNIDAD EMPRESARIAL:</td>
+    <td colspan="4" style="text-align: left;">CÓDIGO:</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align: left;">EMPRESA:</td>
+    <td colspan="4" style="text-align: left;">CÓDIGO:</td>
+  </tr>
+  <tr >
+    <td colspan="4" style="text-align: left;">GRUPO EMPRESARIAL:</td>
+    <td colspan="4" style="text-align: left;">CÓDIGO:</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align: left;">PROVINCIA:</td>
+    <td colspan="4" style="text-align: left;">CÓDIGO:</td>
+  </tr>
+
+  <tr>
+    <th colspan="8" style="text-align: center;">TIPO DE ACTUALIZACIÓN</th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: left;">TOMA:</td>
+    <td colspan="3" style="text-align: left;">ALTA:</td>
+    <td colspan="2" style="text-align: left;">BAJA:</td>
+  </tr>
+
+  <tr>
+    <th colspan="8" style="text-align: center;">EQUIPO</th>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align: left;">TIPO DE EQUIPO:</td>
+    <td colspan="3" style="text-align: left;">CÓDIGO:</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align: left;">PAÍS:</td>
+    <td colspan="3" style="text-align: left;">CÓDIGO:</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align: left;">MARCA:</td>
+    <td colspan="3" rowspan="2" style="text-align: left;">CÓDIGO:</td>
+  </tr> 
+  <tr>
+    <td colspan="5" style="text-align: left;">MODELO:</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align: left;">SERIE:</td>
+    <td colspan="3" style="text-align: left;">AÑO DE FABRICACIÓN:</td>
+  </tr>
+  <tr>
+    <td colspan="8" style="text-align: left;">AÑO DE PUESTA EN MARCHA:</td>
+  </tr>
+  <tr>
+    <td colspan="8" style="text-align: left;">MATRÍCULA(CHAPA) DE CIRCULACIÓN:</td>
+  </tr>
+  <tr>
+    <td colspan="8" style="text-align: left;">NÚMERO DE INVENTARIO:</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align: left;">PARÁMETRO FUNDAMENTAL:</td>
+    <td colspan="3" style="text-align: left;">UNIDAD DE MEDIDA:</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align: left;">ORIGINAL:</td>
+    <td colspan="4" style="text-align: left;">CONVERTIDO:</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: left;">ESTADO TÉCNICO:</td>
+    <td colspan="2" style="text-align: left;">Bueno:</td>
+    <td colspan="1" style="text-align: left;">Regular:</td>
+    <td colspan="2" style="text-align: left;">Malo:</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: left;">SITUACIÓN ACTUAL:</td>
+    <td colspan="2" style="text-align: left;">Producción:</td>
+    <td colspan="1" style="text-align: left;">Conserv:</td>
+    <td colspan="2" style="text-align: left;">Proc. Baja:</td>
+  </tr>
+
+  <tr>
+    <th colspan="8" style="text-align: center;">MOTOR ACTUAL</th>
+  </tr>
+
+  <tr>
+    <td colspan="1" style="text-align: left;">GASOLINA:</td>
+    <td colspan="1" style="text-align: left;">DIESEL:</td>
+    <td colspan="1" style="text-align: left;">ELÉCTRICO:</td>
+    <td colspan="1" style="text-align: left;">NEUMÁTICO:</td>
+    <td colspan="1" style="text-align: left;">HIDRÁULICO:</td>
+    <td colspan="3" style="text-align: left;">OTROS:</td>
+  </tr>
+
+  <tr>
+    <td colspan="8" style="text-align: left;">MARCA/MODELO MOTOR:</td>
+  <tr>
+
+  <tr>
+        <td colspan="8" style="text-align: left;">No. MOTOR:</td>
+  <tr>
+
+        <th colspan="3" style="text-align: left;">NEUMÁTICOS:</th>
+        <td colspan="2" style="text-align: left;">CANTIDAD:</td>
+        <td colspan="3" style="text-align: left;">MEDIDAS:</td>
+    <tr> 
+    <tr>
+        <th colspan="3" style="text-align: left;">BATERÍAS:</th>
+        <td colspan="2" style="text-align: left;">CANTIDAD:</td>
+        <td colspan="3" style="text-align: left;">MEDIDAS:</td>
+    <tr> 
+
+        <tr>
+            <th colspan="8" style="text-align: center;">COSTOS</th>
+        <tr> 
+        
+        <tr>
+            <td colspan="6" style="text-align: left;">VALOR INICIAL:</td>
+            <td colspan="2" style="text-align: left;">DEPRECIACIÓN(ACUMULADA):</td>
+        <tr> 
+        <tr>
+            <td colspan="8" style="text-align: left;">OBSERVACIONES:</td>
+        <tr>
+
+  <tr>
+    <td colspan="8" style="text-align: left;">NOMBRES DE LOS EJECUTANTES DE LA TOMA:
+        <br> <br> <br> <br> <br> </td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align: left;">CONFECCIONADO:</td>
+    <td colspan="4" style="text-align: left;">CODIFICADO Y COMPUTADO:</td>
+ <tr>
+  <tr>
+    <td colspan="4" style="text-align: center;">NOMBRE Y APELLIDOS:</td>
+    <td colspan="4" style="text-align: center;">NOMBRE Y APELLIDOS:</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align: center;">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte el nombre</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td colspan="4" style="text-align: center;">
+        <mat-form-field style="width: 100%;">
+          <mat-label class="required">Inserte el nombre</mat-label>
+          <input matInput type="text"/>
+        </mat-form-field>
+    </td>
+   </tr>
+
+    <tr>
+        <td colspan="4" style="text-align: center;">CARGO:</td>
+        <td colspan="4" style="text-align: center;">CARGO:</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Inserte el cargo</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="4" style="text-align: center;">
+            <mat-form-field style="width: 100%;">
+              <mat-label class="required">Inserte el cargo</mat-label>
+              <input matInput type="text"/>
+            </mat-form-field>
+            </td>
+        </tr>
+
+    <tr>
+        <td colspan="4" style="text-align: left;">FIRMA:</td>
+        <td colspan="4" style="text-align: left;">FIRMA:</td>
+    </tr>
+
+
+

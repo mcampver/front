@@ -1,0 +1,78 @@
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+Actualizar depreciación
+</ai-title>
+
+<mat-form-field
+appearance="standard"
+style="padding-right: 8%"
+
+>
+<mat-label class="required">Mes</mat-label>
+<mat-select>
+  <mat-option>Enero</mat-option>
+  <mat-option>Febrero</mat-option>
+  <mat-option>Marzo</mat-option>
+  <mat-option>Abril</mat-option>
+  <mat-option>Mayo</mat-option>
+  <mat-option>Junio</mat-option>
+  <mat-option>Julio</mat-option>
+  <mat-option>Agosto</mat-option>
+  <mat-option>Septiembre</mat-option>
+  <mat-option>Octubre</mat-option>
+  <mat-option>Noviembre</mat-option>
+  <mat-option>Diciembre</mat-option>
+</mat-select>
+</mat-form-field>
+
+<mat-form-field
+appearance="standard"
+style="padding-right: 8%"
+>
+<mat-label class="required">Año</mat-label>
+<mat-select>
+    <mat-option></mat-option>
+</mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="standard" style="padding-right: 8%">
+  <mat-label>Depreciación acumulada:</mat-label>
+  <input matInput readonly />
+</mat-form-field>
+   
+<mat-form-field appearance="standard" style="padding-right: 8%">
+  <mat-label>Valor inicial:</mat-label>
+  <input matInput readonly />
+</mat-form-field>
+  
+
+  <mat-form-field appearance="standard" style="padding-right: 8%">
+    <mat-label class="required">Depreciación</mat-label>
+    <input matInput type="text" />
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" style="padding-right: 8%">
+    <mat-label>Valor actual:</mat-label>
+    <input matInput readonly />
+  </mat-form-field>
+
+
+<div mat-dialog-actions align="end">
+    <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+      Cancelar
+    </button>
+    <button
+      (click)="accept()"
+      class="left-space btn-width"
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!createForm.valid"
+    >
+      Aceptar
+    </button>

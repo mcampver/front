@@ -1,0 +1,36 @@
+<div class="mask"></div>
+<div class="profile-container">
+  <div class="user-picture">
+    <mat-icon *ngIf="true">person_outline</mat-icon>
+    <!--    <mat-icon class="camera" hidden>camera-outline</mat-icon>-->
+
+    <!--
+        <img *ngIf="username==='acralys'" src="/assets/images/profile-acralys.jpeg" alt="Profile acralys">
+
+    -->
+  </div>
+
+  <label class="user-fullname">
+    {{userFullName}}
+  </label>
+
+  <label class="caption">
+    {{username}}
+  </label>
+
+  <label class="subtitle flexy" matTooltip="Accesos restantes" matTooltipPosition="above">
+    <mat-icon>task_alt</mat-icon>
+    {{accessCount}}
+  </label>
+
+  <hr class="hr-row" />
+
+  <div class="list-menu">
+    <!--    <a *ngFor="let item of menu" class="flexy" (click)=menuAction(item.key)>-->
+    <a *ngFor="let item of menu" class="flexy">
+      <!--      <mat-icon pack="{{item.pack}}">{{item.icon}}</mat-icon>-->
+      <mat-icon>{{item.icon}}</mat-icon>
+      {{item.title}}
+    </a>
+  </div>
+</div>

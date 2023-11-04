@@ -1,0 +1,91 @@
+mat-sidenav {
+  min-width: 20rem;
+  max-width: 24rem;
+  border-right: none;
+}
+
+#normas-logo {
+  margin-left: 1rem;
+}
+
+.page-wrapper {
+  height: calc(100vh - 64px - 2.5rem);
+  padding: 1.25rem;
+
+  //.page-content. {
+  //  padding: 1.25rem;
+  //}
+}
+
+mat-sidenav-container {
+  // background: #f5fafa;
+  z-index: unset;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+ai-header mat-icon {
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.floatMain{
+  position: fixed;
+  bottom: 2vh;
+  right: 25px;
+  z-index: 99999;
+
+}
+
+.fab-class {
+  color: white !important;
+}
+
+.text-show {
+  animation-name: showText;
+  animation-duration: 1s;
+}
+
+@keyframes showText {
+  from {
+    transform: scaleX(0);
+
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.text-hide {
+  display: none;
+}
+
+.text-normal {
+  background-color: black;
+  padding: 5px 20px 5px 10px;
+  color: white;
+  position: relative;
+  right: -10px;
+  border-radius: 25px 0 0 25px;
+  width: fit-content;
+  transform-origin: right;
+}
+
+.text-hide-action {
+  animation-name: hideText;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideText {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}

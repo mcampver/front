@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $f: map.get($color-config, foreground);
+  $app-bar-color: mat.get-color-from-palette($f, app-bar);
+  mat-toolbar {
+    color: $app-bar-color !important;
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

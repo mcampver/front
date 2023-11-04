@@ -1,0 +1,1718 @@
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+  Planilla baja técnica
+</ai-title>
+
+<div mat-dialog-content>
+  <form
+    class="container form-container"
+    [formGroup]="bajaForm"
+    fxLayout="column"
+  >
+    <table>
+      <tr>
+        <th colspan="3" rowspan="3" class="text-left">MINISTERIO DE LA CONSTRUCIÓN<br>
+          Dirección de Equipos<br>
+          Entidad:
+        </th>
+        <th colspan="3" rowspan="3" class="text-center">Catálogo de Maquinaria<br>
+          de la construcción<br>
+          Parámetros-Técnicos
+        </th>
+        <th colspan="1" class="text-center">FECHA</th>
+        <th colspan="1" rowspan="3" class="text-left">Página<br><br>
+          No. 1
+        </th>
+      </tr>
+      <tr>
+        <th colspan="1" class="text-center">D | M | A</th>
+      </tr>
+      <tr>
+        <th colspan="1">
+          <mat-form-field style="width: 100%;">
+            <input matInput class="text-center" [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="8"></td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">Código:</td>
+        <td colspan="2" class="text-left">Tipo:</td>
+        <td colspan="2" rowspan="3" class="text-left">Ubicación:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">Inventario:</td>
+        <td colspan="2" class="text-left">P.Básico:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">País:</td>
+        <td colspan="2" class="text-left">Serie:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">Marca:</td>
+        <td colspan="2" class="text-left">Año/Fabricación:</td>
+        <td colspan="2" class="text-left">P.Marcha:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">Modelo:</td>
+        <td colspan="2" class="text-left">Valor inicial:</td>
+        <td colspan="2" class="text-left">Actual:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">Matrícula:</td>
+        <td colspan="4" class="text-left">Estado Técnico:</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="text-left">Motor-Marca</td>
+        <td colspan="2" class="text-left">Potencia</td>
+        <td colspan="2" class="text-left">Serie</td>
+        <td colspan="2" class="text-left">Combustible-Consumo</td>
+      </tr>
+      <tr>
+        <td colspan="8">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Inserte Descripción</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">Parámetros-Técnicos-Equipo Base.</td>
+        <td colspan="4" class="text-left">Parámetros Básicos-Otros.</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Inserte Parámetros-Técnicos-Equipo Base</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="4" class="text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Inserte Parámetros Básicos-Otros</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">Parámetros-Básicos-Aditamentos.</td>
+        <td colspan="4" class="text-left">Foto del Equipo.</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Inserte Parámetros-Básicos-Aditamentos</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="4" class="text-center">
+          No tiene Imagen
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="text-center">Confeccionado.</td>
+        <td colspan="3" class="text-center">Aprobado.</td>
+        <td colspan="2" class="text-center">Fecha Actualización</td>
+      </tr>
+      <tr>
+        <td colspan="3" rowspan="2" class="text-center">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Nombre y Apellidos</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="3" rowspan="2" class="text-center">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Nombre y Apellidos</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="2" class="text-center">D | M | A</td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <mat-form-field style="width: 100%;">
+            <input matInput class="text-center" [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="3" class="text-left">Cargo:</td>
+        <td colspan="5" class="text-left">Cargo:</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="text-left">Firma y Cuño.</td>
+        <td colspan="5" class="text-left">Firma y Cuño.</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td colspan="4" class="notb">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Resolución No.</mat-label>
+            <input matInput type="number"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          <u>Modelo:</u>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" class="notb text-left">EMPRESA:</td>
+        <td colspan="1" class="notb text-left">CÓDIGO:</td>
+        <td colspan="2" class="notb text-left">PROVINCIA:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          <u>DATOS DEL EQUIPO</u>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" class="notb text-left">TIPO:</td>
+        <td colspan="1" class="notb text-left">PAÍS:</td>
+        <td colspan="1" class="notb text-left">MARCA:</td>
+        <td colspan="1" class="notb text-left">MODELO:</td>
+      </tr>
+      <tr>
+        <td colspan="1" class="notb text-left">SERIE:</td>
+        <td colspan="1" class="notb text-left">AÑO DE FABRICACIÓN:</td>
+        <td colspan="2" class="notb text-left">CHAPA DE CIRCULACIÓN:</td>
+      </tr>
+      <tr>
+        <td colspan="1" class="notb text-left">SIGLA ALFABÉTICA:</td>
+        <td colspan="3" class="notb text-left">No. INVENTARIO:</td>
+      </tr>
+      <tr>
+        <td colspan="1" class="notb text-left">PRECIO INICIAL:</td>
+        <td colspan="3" class="notb text-left">VALOR RESIDUAL:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">CANTIDAD REP. GRALES EFECTUADAS:</mat-label>
+            <input matInput type="number"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          FECHA DE PARALIZACIÓN:
+          <mat-form-field style="width: 100%;">
+            <input matInput class="text-center" [matDatepicker]="picker3">
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">COSTO ESTIMADO DE LA REPARACIÓN</mat-label>
+            <input matInput type="number"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          EVALUACIÓN TÉCNICA:
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Descripción</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          EVALUACIÓN ECONÓMICA:
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Descripción</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          <u>CONCLUSIONES DE LA COMISIÓN:</u>
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Descripción</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">
+          DESTINO:
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Destino</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">NIVEL DE APROBACIÓN:</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">PRESIDENTE COMISIÓN EMPRESARIAL:</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Nombre</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label>Fecha</mat-label>
+            <input matInput class="text-center" [matDatepicker]="picker4">
+            <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+            <mat-datepicker #picker4></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">DIRECTOR GRAL EMPRESA:</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Nombre</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label>Fecha</mat-label>
+            <input matInput class="text-center" [matDatepicker]="picker5">
+            <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+            <mat-datepicker #picker5></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">DIRECTOR ECONÓMICO:</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Nombre</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label>Fecha</mat-label>
+            <input matInput class="text-center" [matDatepicker]="picker6">
+            <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+            <mat-datepicker #picker6></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">DIRECTOR DE EQUIPOS:</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Nombre</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label>Fecha</mat-label>
+            <input matInput class="text-center" [matDatepicker]="picker7">
+            <mat-datepicker-toggle matSuffix [for]="picker7"></mat-datepicker-toggle>
+            <mat-datepicker #picker7></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="notb text-left">DIRECTOR ENTIDAD REPARADORA:</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label class="required">Nombre</mat-label>
+            <input matInput type="text"/>
+          </mat-form-field>
+        </td>
+        <td colspan="2" class="notb text-left">
+          <mat-form-field style="width: 100%;">
+            <mat-label>Fecha</mat-label>
+            <input matInput class="text-center" [matDatepicker]="picker8">
+            <mat-datepicker-toggle matSuffix [for]="picker8"></mat-datepicker-toggle>
+            <mat-datepicker #picker8></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td colspan="12" class="notb text-left"><u>ESTADO TÉCNICO DEL EQUIPO:</u></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">COMPONENTE</td>
+        <td colspan="1" class="notb text-left">ROTO</td>
+        <td colspan="1" class="notb text-left">FALTA</td>
+        <td colspan="1" class="notb text-left">INCOMP</td>
+        <td colspan="1" class="notb text-left">EMP</td>
+        <td colspan="1" class="notb text-left">NO</td>
+        <td colspan="1" class="notb text-left">BUENO</td>
+        <td colspan="1" class="notb text-left">yyyyy</td>
+        <td colspan="1" class="notb text-left">||||||||/*/*/*</td>
+        <td colspan="1" class="notb text-left">/**/*/*/*</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">CABINA O CASETA</td>
+        <td colspan="1" class="notb text-left">
+            <mat-radio-button [checked]="formC1 === '1'" (click)="formC1 = '1'"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+            <mat-radio-button [checked]="formC1 === '2'" (click)="formC1 = '2'"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+            <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">CARETA</td>
+        <td colspan="1" class="notb text-left">
+            <mat-radio-button [checked]="formC2 === '1'" (click)="formC2 = '1'"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+            <mat-radio-button [checked]="formC2 === '2'" (click)="formC2 = '2'"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+            <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">GUARDAFANGOS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">FAROLES</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">PARABRISAS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">PUERTAS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">CRISTALES</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">ASIENTOS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">VOLANTES DE DIRECCIÓN</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">PALANCA O PEDALES</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">INSTRUMENTOS DE CONTROL</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">DEFENSA</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">MOTOR PRINC. DE COMB.</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">MOTOR AUX. DE COMB.</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">RADIADOR</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">BOMBA DE AGUA</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">CARBURADOR</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">BOMBA DE GASOLINA</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">BOMBA DE INYECCIÓN COMBUST.</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">INYECTORES</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">TANQUE COMBUSTIBLE</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">PURIFICADOR DE AIRE</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">MOTOR DE ARRANQUE ELEC.</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">DISTR. ENCENDIDO</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">PUENTE TRASERO</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">NEUMÁTICOS EN USO</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">LLANTAS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">ESTERAS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">RUEDA GUÍA</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">RODILLOS SUP. E INF.</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">SPROCK (CATALINAS ESTERAS)</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">EMBRAGUE DE DIRECCIÓN</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">REDUCTORES FINALES</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">BOMBA HIDRAÚLICA</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">MOTOR HIDRAÚLICO</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">DISTR. HIDRAÚLICO</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">CILINDROS HIDRAÚLICOS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">WINCHES O DROMOS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">COMPRESOR</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">MOTORES ELÉCTRICOS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">GENERADOR ELÉCTRICO</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">ADITAMENTOS DE TRABAJO</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">OTROS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="notb text-left">BOBINA DE INCENDIOS</td>
+        <td colspan="1" class="notb text-left">
+          <mat-radio-button value="1"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="2"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="3"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="4"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="5"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="6"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="7"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="8"></mat-radio-button>
+        </td>
+        <td colspan="1" class="notb">
+          <mat-radio-button value="9"></mat-radio-button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+    Cancelar
+  </button>
+  <button
+    (click)="accept()"
+    class="left-space btn-width"
+    mat-raised-button
+    type="submit"
+    color="primary"
+  >
+    Aceptar
+  </button>
+</div>

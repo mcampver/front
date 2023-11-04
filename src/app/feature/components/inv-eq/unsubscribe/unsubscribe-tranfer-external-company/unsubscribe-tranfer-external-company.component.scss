@@ -1,0 +1,55 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $b: map.get($color-config, background);
+  $f: map.get($color-config, foreground);
+  $p: map.get($color-config, primary);
+
+  .ai-toggle-switcher {
+    background: mat.get-color-from-palette($p, 500);
+  }
+
+  .table {
+    box-shadow: mat.get-color-from-palette($b, sidenav-shadow) !important;
+    td, th {
+      border-bottom-color: mat.get-color-from-palette($b, sidenav-line) !important;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  margin-top: 1rem;
+}
+td, th {
+  border: 1px solid black;
+  padding: 5px 10px 2px 10px;
+}
+
+.notb{
+  border: 1px;
+  padding: 5px 10px 2px 10px;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
+.example-radio-button {
+  margin: 15px;
+}
+
+.example-margin {
+  margin: 0 0 0 15px;
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

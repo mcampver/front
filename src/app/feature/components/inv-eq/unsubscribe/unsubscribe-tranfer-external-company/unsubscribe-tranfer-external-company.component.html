@@ -1,0 +1,259 @@
+
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+  Planilla traslado a empresa externa
+</ai-title>
+
+<div mat-dialog-content>
+<form
+    class="container form-container"
+    [formGroup]="bajaForm"
+    fxLayout="column"
+>
+<table>
+  <tr>
+    <th colspan="3" rowspan="3" class="text-center">MINISTERIO DE LA CONSTRUCIÓN<br>
+      DIRECCIÓN DE EQUIPOS</th>
+    <th colspan="3" rowspan="3" class="text-center">SOLICITUD DE VENTA DE MEDIOS BÁSICOS<br>
+      EQUIPOS<br>
+      MODELO CG-20</th>
+    <th colspan="2" class="text-center">FECHA</th>
+  </tr>
+  <tr>
+    <th colspan="2" class="text-center">D | M | A</th>
+  </tr>
+  <tr>
+    <th colspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label>Fecha</mat-label>
+        <input matInput class="text-center" [matDatepicker]="pi1">
+        <mat-datepicker-toggle matSuffix  [for]="pi1"></mat-datepicker-toggle>
+        <mat-datepicker #pi1></mat-datepicker>
+      </mat-form-field>
+    </th>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">1. -EMISOR</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="text-left">CÓDIGO:</td>
+    <td colspan="4" class="text-left">ENTIDAD:</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="text-left">ORGANISMO:</td>
+    <td colspan="4" class="text-left">PROVINCIA:</td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">2. -EQUIPO(MAQUINARIA)</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">TIPO:</td>
+    <td colspan="2" class="text-left">MARCA:</td>
+    <td colspan="2" class="text-left">MODELO:</td>
+    <td colspan="2" class="text-left">NO-INV:</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">CHAPA:</td>
+    <td colspan="2" class="text-left">SERIE:</td>
+    <td colspan="2" class="text-left">AÑO FABRICACIÓN:</td>
+    <td colspan="2" class="text-left">OTROS:</td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">3. -COSTO(PRECIO DE VENTA)</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-center">VALOR DE VENTA</td>
+    <td colspan="6" class="text-center">DEPRECIACIÓN ACUMULADA</td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte el valor</mat-label>
+        <input matInput type="number"/>
+      </mat-form-field>
+    </td>
+    <td colspan="3" class="text-center">REPOSICIÓN</td>
+    <td colspan="3" class="text-center">REPARAC. CAPITALIZABLE</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte el valor</mat-label>
+        <input matInput type="number"/>
+      </mat-form-field>
+    </td>
+    <td colspan="3" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte el valor</mat-label>
+        <input matInput type="number"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">4. -ESTADO TÉCNICO</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-center">BUENO</td>
+    <td colspan="3" class="text-center">REGULAR</td>
+    <td colspan="2" class="text-center">MALO</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-center"></td>
+    <td colspan="3" class="text-center"></td>
+    <td colspan="2" class="text-center"></td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">5. -RAZÓN POR LA CUAL SE PROPONE LA VENTA</td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte razón</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">6. -SOLICITANTES DE LA VENTA</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-center">NOMBRE Y APELLIDOS</td>
+    <td class="text-center">CARGO</td>
+    <td colspan="3" class="text-center">NOMBRE Y APELLIDOS</td>
+    <td class="text-center">CARGO</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-center">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte nombre del interesado</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td rowspan="2" class="text-center">Director</td>
+    <td colspan="3" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte nombre del interesado</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td rowspan="2" class="text-center">Cont-Finz</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-left">FIRMA(CUÑO)</td>
+    <td colspan="3" class="text-left">FIRMA(CUÑO)</td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">7. -ENTIDAD INTERESADA EN COMPRARLO</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="text-left">CÓDIGO:</td>
+    <td colspan="4" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">ENTIDAD</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="text-left">ORGANISMO:</td>
+    <td colspan="4" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">PROVINCIA</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-center">NOMBRE Y APELLIDOS</td>
+    <td class="text-center">CARGO</td>
+    <td colspan="3" class="text-center">NOMBRE Y APELLIDOS</td>
+    <td class="text-center">CARGO</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-center">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte nombre del interesado</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td rowspan="2" class="text-center">Director</td>
+    <td colspan="3" class="text-left">
+      <mat-form-field style="width: 100%;">
+        <mat-label class="required">Inserte nombre del interesado</mat-label>
+        <input matInput type="text"/>
+      </mat-form-field>
+    </td>
+    <td rowspan="2" class="text-center">Cont-Finz</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="text-left">FIRMA(CUÑO)</td>
+    <td colspan="3" class="text-left">FIRMA(CUÑO)</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="text-left">8. -SOLICITUD</td>
+    <td colspan="2" class="text-left">No:</td>
+    <td colspan="4" class="text-center">
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectAprov">
+        <mat-radio-button class="example-radio-button" *ngFor="let a of aprov" [value]="a">
+          {{a}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4" rowspan="2" class="text-center">NOMBRE Y APELLIDOS</td>
+    <td colspan="2" class="text-center">CARGO</td>
+    <td colspan="2" class="text-center">FECHA</td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2" class="text-center">Director de equipos</td>
+    <td colspan="2" class="text-center">D | M | A</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="text-left">FIRMA(CUÑO)</td>
+    <td colspan="2" class="text-left"></td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">MOTIVOS DE LA DENEGACIÓN:</td>
+  </tr>
+  <tr>
+    <td colspan="8" class="text-left">9. -APROBACIÓN:
+      <mat-checkbox class="example-margin">VISTO BUENO</mat-checkbox>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4" rowspan="2" class="text-center">NOMBRE Y APELLIDOS</td>
+    <td colspan="2" class="text-center">CARGO</td>
+    <td colspan="2" class="text-center">FECHA</td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2" class="text-center">Autoridad Facultada</td>
+    <td colspan="2" class="text-center">D | M | A</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="text-left">FIRMA(CUÑO)</td>
+    <td colspan="2" class="text-left"></td>
+  </tr>
+</table>
+</form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+    Cancelar
+  </button>
+  <button
+    (click)="accept()"
+    class="left-space btn-width"
+    mat-raised-button
+    type="submit"
+    color="primary"
+  >
+    Aceptar
+  </button>
+</div>

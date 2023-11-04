@@ -1,0 +1,16 @@
+<mat-form-field class="example-full-width" [appearance]="appearance" [ngClass]="{'mat-form-field-invalid': true}">
+  <mat-label *ngIf="label" [ngClass]="{'required': required}">{{label}}</mat-label>
+  <input type="text"
+         aria-label="string"
+         matInput
+         [matAutocomplete]="auto"
+         [(ngModel)]="value"
+  (blur)="onTouched()" [disabled]="isDisable">
+  <mat-icon matPrefix class="small-icon space-right">search</mat-icon>
+  <mat-icon matSuffix>expand_more</mat-icon>
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="showExpr" >
+    <mat-option *ngFor="let option of data | async" [value]="option" >
+      {{showExpr(option)}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

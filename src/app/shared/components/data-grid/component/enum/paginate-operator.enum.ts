@@ -1,0 +1,16 @@
+export enum AllowedOperation {
+  CONTAINS = 'CONTAINS',
+  NOT_CONTAINS = 'NOT_CONTAINS',
+  STARTS_WITH = 'STARTS_WITH',
+  ENDS_WITH = 'ENDS_WITH',
+  EQUALS_IGNORE_CASE = 'EQUALS_IGNORE_CASE',
+  EQUALS = '=',
+  DISTINCT = '<>',
+  MORE_THAN = '>',
+  MORE_THAN_OR_EQUAL = '>=',
+  LESS_THAN = '<',
+  LESS_THAN_OR_EQUAL = '<=',
+  IN = 'in',
+  NOT_IN = 'NOT_IN',
+  IS = 'IS',
+}

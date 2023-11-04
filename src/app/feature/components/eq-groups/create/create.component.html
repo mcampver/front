@@ -1,0 +1,69 @@
+<ai-title
+  mat-dialog-title
+  cdkDrag
+  cdkDragHandle
+  cdkDragRootElement=".cdk-overlay-pane"
+  class="title-dialog--drag"
+>
+  {{ labelTitle }} grupo de equipo
+</ai-title>
+
+<div mat-dialog-content>
+  <form
+    class="container form-container"
+    [formGroup]="createForm"
+    fxLayout="column"
+  >
+    <mat-form-field appearance="standard">
+      <mat-label class="required">Código:</mat-label>
+      <input matInput formControlName="code" type="text" appInputNoEmoji [formControlDirective]="this.createForm.get('code')"
+      appInputNumber [placeholder]="globalFormInputsMessage.INPUT_CODE" [maxlength]="10"/>
+      <mat-error *ngIf="this.createForm.controls['code'].hasError(formValidationErrorNameEnum.REQUIRED)">
+        {{globalFormInputsMessage.INPUT_REQUIERED}}
+      </mat-error>
+      <mat-error *ngIf="this.createForm.controls['code'].hasError(formValidationErrorNameEnum.FIELD_ALREADY_EXIST)">
+        {{globalFormInputsMessage.INPUT_FIELD_ALREADY_EXIST}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label class="required">Nombre:</mat-label>
+      <input matInput formControlName="name" type="text" appInputNoEmoji [formControlDirective]="this.createForm.get('name')"
+      appInputOnlyLettersWithSpace [placeholder]="globalFormInputsMessage.INPUT_LAE" [maxlength]="100"/>
+      <mat-error *ngIf="this.createForm.controls['name'].hasError(formValidationErrorNameEnum.REQUIRED)">
+        {{globalFormInputsMessage.INPUT_REQUIERED}}
+      </mat-error>
+      <mat-error *ngIf="this.createForm.controls['name'].hasError(formValidationErrorNameEnum.FIELD_ALREADY_EXIST)">
+        {{globalFormInputsMessage.INPUT_FIELD_ALREADY_EXIST}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label class="required">Siglas:</mat-label>
+      <input matInput formControlName="initials" type="text" appInputNoEmoji
+      [formControlDirective]="this.createForm.get('codeIsoAlpha3')" appInputAcronym [placeholder]="globalFormInputsMessage.INPUT_CODE" [maxlength]="10"/>
+      <mat-error *ngIf="this.createForm.controls['initials'].hasError(formValidationErrorNameEnum.REQUIRED)">
+        {{globalFormInputsMessage.INPUT_REQUIERED}}
+      </mat-error>
+      <mat-error *ngIf="this.createForm.controls['initials'].hasError(formValidationErrorNameEnum.FIELD_ALREADY_EXIST)">
+        {{globalFormInputsMessage.INPUT_FIELD_ALREADY_EXIST}}
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button type="button" class="btn-width" (click)="cancel()">
+    Cancelar
+  </button>
+  <button
+    (click)="accept()"
+    class="left-space btn-width"
+    mat-raised-button
+    type="submit"
+    color="primary"
+    [disabled]="!createForm.valid"
+  >
+    Aceptar
+  </button>
+</div>

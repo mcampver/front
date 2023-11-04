@@ -1,0 +1,16 @@
+// CUSTOM COMPONENTS
+@use "../../../shared/components/header/header-theme" as header;
+@use "../../../shared/components/sidebar/menu-list-item/menu-list-item" as menu-list-item;
+@use "../../../feature/components/base/base-theme" as preswinx;
+@use "../../components/snack-bar/snack-bar-theme" as snack-bar;
+@use "../../../shared/components/data-grid/component/data-grid.component-theme" as data-grid;
+@use "src/app/core/theme/global";
+
+@mixin all-custom-component-theme-colors($theme-or-color-config) {
+  @include header.theme($theme-or-color-config);
+  @include menu-list-item.theme($theme-or-color-config);
+  @include preswinx.theme($theme-or-color-config);
+  @include snack-bar.theme($theme-or-color-config);
+  @include data-grid.theme($theme-or-color-config);
+  @include global.theme($theme-or-color-config);
+}

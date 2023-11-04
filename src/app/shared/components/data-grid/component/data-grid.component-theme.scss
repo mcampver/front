@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../../../../../../node_modules/@angular/material/index" as mat;
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $b: map.get($color-config, background);
+
+  table.vertical-line {
+    th.mat-header-cell,
+    td.mat-cell,
+    td.mat-footer-cell {
+      border-right: 1px solid mat.get-color-from-palette($b, sidenav-line) !important;
+    }
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

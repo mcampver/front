@@ -1,0 +1,46 @@
+<button class="ai-menu-button" (click)="onClick()"
+        [ngClass]="{'active': isActive}">
+  <div class="ai-menu-button__led-activity"></div>
+  <div class="ai-menu-button__spacer-level" [ngStyle]="{'padding-left': depth + 'rem'}"></div>
+  <div class="ai-menu-button__icon">
+    <ng-container *ngIf="isAicrosIcon; else materialIcons">
+      <mat-icon *ngIf="item.iconName"
+                class="routeIcon" [svgIcon]="item.iconName">
+      </mat-icon>
+    </ng-container>
+    <ng-template #materialIcons>
+      <mat-icon *ngIf="item.iconName" class="routeIcon">
+        {{item.iconName}}
+      </mat-icon>
+    </ng-template>
+  </div>
+  <div class="ai-menu-button__label">
+    {{item.displayName}}
+  </div>
+
+  <span fxFlex *ngIf="isFather">
+    <span fxFlex></span>
+    <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'"
+              class="icon-expand">
+      expand_more
+    </mat-icon>
+  </span>
+
+</button>
+
+<ng-container *ngIf="isFather">
+  <div #panelExpanded class="panel-expanded" @panelExpandedTrigger
+       (@panelExpandedTrigger.start)="onAnimationStart(panelExpanded)"
+       (@panelExpandedTrigger.done)="onAnimationDone(panelExpanded)"
+       *ngIf="expanded">
+    <ng-container *ngIf="hasChildren else pinnedEmpty">
+      <ai-menu-list-item *ngFor="let child of item.children" [item]="child" [depth]="depth+1">
+      </ai-menu-list-item>
+    </ng-container>
+    <ng-template #pinnedEmpty>
+      <div class="pinned-empty">
+        No posee elementos fijados
+      </div>
+    </ng-template>
+  </div>
+</ng-container>
